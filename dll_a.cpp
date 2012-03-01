@@ -6,9 +6,13 @@
 #include <conio.h>
 #include "dlltest.h"
 using namespace std;
+//Відрізок на якому лежить найбільша к-ть точок
 void line();
+//Трикутник з найбільшою площею
 float the_bigest_triangle(int n);
+//Коло на якому лежить найбільша к-ть точок
 void circle_most_points();
+//коло в якому є всі точки
 void circle_all_points();
 
 int main()
