@@ -17,9 +17,13 @@ typedef struct Section
 {
 	point a;
 } Line;
+//відрізок на якому лежить найбільша кількість точок
 void line();
+//трикутник з найбільшою площею
 float the_bigest_triangle(int n);
+//коло яке має найбільшу кількість точок
 void circle_most_points();
+//коло якому належать всі точки
 void circle_all_points();
 using namespace std;
 
