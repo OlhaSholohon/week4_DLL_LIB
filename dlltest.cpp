@@ -3,7 +3,7 @@
 
 using namespace std;
 
-
+//встановити координати точки
 extern "C" __declspec(dllexport) Section getX_Y(){
 	Section A;
 	cout<<"Enter x ";
@@ -12,7 +12,7 @@ extern "C" __declspec(dllexport) Section getX_Y(){
 	cin>>A.a.y;
 	return A;
 }
-
+//знайти довжину лінії
 extern "C" __declspec(dllexport) int length(){
 	Section a;
 	Section b;
@@ -23,6 +23,7 @@ extern "C" __declspec(dllexport) int length(){
 	cout<<"Length of line is "<<s;
 	return static_cast <int>(s);
 }
+//чи лежить точка на одній прямій з відрізком
 extern "C" __declspec(dllexport) bool point_to_line(Section a1,Section a2,Section a3)
 {
 	if(((a3.a.y-a1.a.y)/(a3.a.x-a1.a.x))==((a2.a.y-a1.a.y)/(a2.a.x-a1.a.x)))
@@ -31,6 +32,7 @@ extern "C" __declspec(dllexport) bool point_to_line(Section a1,Section a2,Sectio
 	}
 	return false;
 }
+//інструкції
 extern "C" __declspec(dllexport) void instructions()
 {
 	cout<<"Choose what do you want\n"
@@ -45,6 +47,7 @@ extern "C" __declspec(dllexport) void instructions()
 		"9-circle which has all of points\n"
 		"10-end of the program\n";
 }
+//чи належить точка відрізку
 extern "C" __declspec(dllexport) bool point_on_one_line(Section a1,Section a2,Section a3)
 {
 	
@@ -53,13 +56,14 @@ extern "C" __declspec(dllexport) bool point_on_one_line(Section a1,Section a2,Se
 	}
 	return false;
 }
+//площа трикутника
 extern "C" __declspec(dllexport) float Square(){
 	float S;
 	Section a1,a2,a3;
 	a1=getX_Y();
 	a2=getX_Y();
 	a3=getX_Y();
-	//S = |(x1 � x3)�(y2 � y3) � (x2 � x3)�(y1 � y3)|/2
+
 	S=(abs((a1.a.x-a3.a.x)*(a2.a.y-a3.a.y)-(a2.a.x-a3.a.x)*(a1.a.y-a3.a.y)))/2;
 	return S;
 }
